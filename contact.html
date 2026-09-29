@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PawPal - Contact Us</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   <!-- Website header -->
+<header>
+    <img src="images/pawpal-header.jpg" alt="PawPal pets">
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+<section>
+
+    <article>
+        <h2>Contact Us</h2>
+
+        <p>
+            Have a question about PawPal? Get in touch with us.
+        </p>
+
+        <!-- Contact form -->
+       <form id="contactForm">
+
+            <div>
+               
+                Name:
+             <input type="text" id="name" name="name">
+            </div>
+
+            <br>
+
+            <div>
+                
+              Phone:
+            <input type="text" id="phone" name="phone">
+            </div>
+
+            <br>
+
+            <div>
+                Email:
+             <input type="email" id="email" name="email">
+            </div>
+
+            <br>
+
+            <div>
+                Nature of Query:
+                <select name="query">
+                    <option value="dog-walking">Dog Walking</option>
+                    <option value="pet-sitting">Pet Sitting</option>
+                    <option value="home-visits">Home Visits</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                Message:
+                <br>
+                <textarea id="message" name="message" cols="40" rows="5"></textarea>
+            </div>
+
+            <br>
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+
+        </form>
+
+    </article>
+
+</section>
+<footer>
+    <p>&copy; 2026 PawPal</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

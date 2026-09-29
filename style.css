@@ -1,0 +1,360 @@
+/* Style the whole webpage */
+/* Style the whole webpage */
+body {
+    font-family: Arial, sans-serif; /* Sets the font */
+    margin: 0;                     /* Removes default margin */
+    background-color: white;       /* Sets white background */
+}
+
+/* Style the header */
+/* Style the header */
+header {
+    background-color: white; /* Sets header background */
+    padding: 0;              /* Removes extra space */
+}
+
+/* Style the header image */
+header img {
+    width: 100%;             /* Fills the header width */
+    height: auto;             /* Keeps image proportions */
+    display: block;           /* Removes extra space */
+}
+/* Style the navigation */
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Style the navigation links */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+}
+
+/* Change links when mouse is over */
+nav a:hover {
+    color: #b7dfe8; /* Changes link colour */
+}
+
+/* Style the main section */
+section {
+    padding: 20px;
+}
+
+/* Style the article */
+article {
+    background-color: white;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 900px;
+    text-align: center; /* Centers the content */
+}
+/* Style the home image */
+article img {
+    width: 60%;           /* Sets image width */
+    height: 250px;        /* Sets image height */
+    object-fit: cover;    /* Keeps the image shape */
+    display: block;       /* Places image on its own line */
+    margin: 20px auto;    /* Centers the image */
+    border-radius: 10px;  /* Rounds image corners */
+}
+
+/* Service boxes */
+/* Service boxes */
+/* Service boxes */
+.box {
+    width: 240px;                /* Sets box width */
+    height: 430px;               /* Sets the same height for all boxes */
+    box-sizing: border-box;      /* Includes padding in the box size */
+    background-color: white;     /* Sets white card background */
+    border: 1px solid #ccc;      /* Adds a light border */
+    border-radius: 10px;         /* Rounds the corners */
+    padding: 20px;               /* Adds space inside */
+    margin: 10px;                /* Adds space outside */
+    display: inline-block;       /* Places boxes side by side */
+    vertical-align: top;         /* Aligns boxes at the top */
+}
+
+/* Service box images */
+.box img {
+    width: 100%;                 /* Fills the box width */
+    height: 180px;               /* Sets image height */
+    object-fit: cover;           /* Keeps image proportions */
+    border-radius: 5px;           /* Rounds image corners */
+}
+/* Style the headings */
+h2 {
+    text-align: center;
+}
+
+/* Style the service buttons */
+.box button {
+    background-color: #ddacdd;    /* Changes button colour */
+    color: rgb(22, 10, 10);                 /* Changes text colour */
+    padding: 10px 20px;           /* Adds space inside */
+    border: none;                 /* Removes border */
+    border-radius: 6px;            /* Rounds button corners */
+    cursor: pointer;               /* Shows a pointer on hover */
+    font-weight: bold;             /* Makes text bold */
+}
+
+.box button:hover {
+    background-color: #a54ba5; /* Changes colour on hover */
+}
+/* Style the contact form */
+form {
+    width: 500px;                 /* Sets form width */
+    margin: 30px auto;            /* Centers the form */
+    text-align: left;             /* Aligns form text to the left */
+}
+
+/* Style form fields */
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    padding: 10px;                /* Adds space inside */
+    margin: 5px;                  /* Adds space around */
+    font-family: "Trebuchet MS", sans-serif;
+    box-sizing: border-box;       /* Includes padding in the size */
+}
+
+/* Set input width */
+form input[type="text"],
+form input[type="email"] {
+    width: 250px;                 /* Sets input width */
+}
+
+/* Set message box size */
+form textarea {
+    width: 100%;                  /* Fills the form width */
+    height: 120px;                /* Sets message height */
+}
+
+/* Style form buttons */
+form input[type="submit"],
+form input[type="reset"] {
+    background-color: #d9a6d9;    /* Sets button colour */
+    color: black;                 /* Sets text colour */
+    padding: 10px 20px;           /* Adds space inside */
+    border: none;                 /* Removes border */
+    border-radius: 5px;           /* Rounds corners */
+    font-weight: bold;             /* Makes text bold */
+    cursor: pointer;              /* Shows pointer on hover */
+}
+
+/* Change buttons when mouse is over them */
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #c78bc7;    /* Changes button colour */
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+/* Style the home page */
+section article {
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+/* Style the main title */
+section article h1 {
+    font-size: 36px;
+}
+
+/* Style the home image */
+section article > img {
+    width: 70%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+/* Style the services link */
+section article a {
+    display: inline-block;
+    background-color: #d9a6d9;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Style the welcome section */
+section article:first-child {
+    padding: 40px;
+    background-color: #faf7fc;
+}
+
+/* Style the welcome title */
+section article:first-child h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Style the welcome subtitle */
+section article:first-child h3 {
+    font-size: 22px;
+}
+
+/* Style the welcome text */
+section article:first-child p {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 15px auto;
+}
+/* Style the How PawPal Works section */
+section article:nth-child(2) {
+    padding: 40px;
+}
+
+/* Style the section title */
+section article:nth-child(2) h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* Add space between the service boxes */
+section article:nth-child(2) .box {
+    margin: 10px;
+}
+/* Style the about section */
+section article:nth-child(3) {
+    background-color: #faf7fc;
+    padding: 40px;
+}
+
+section article:nth-child(3) h2 {
+    font-size: 28px;
+}
+
+section article:nth-child(3) p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+/* Style the How PawPal Works boxes */
+section article:nth-child(2) .box {
+    border: none;                 /* Removes the border */
+    background-color: #faf7fc;   /* Adds a light background */
+    padding: 20px;                /* Adds space inside */
+    width: 240px;                 /* Sets box width */
+}
+
+/* Make the images round */
+section article:nth-child(2) .box img {
+    width: 160px;                 /* Sets image width */
+    height: 160px;                /* Sets image height */
+    border-radius: 50%;           /* Makes image circular */
+    object-fit: cover;            /* Keeps image proportions */
+}
+
+/* Style the step titles */
+section article:nth-child(2) .box h3 {
+    font-size: 18px;              /* Sets title size */
+    margin-top: 15px;             /* Adds space above */
+}
+
+/* Style the step text */
+section article:nth-child(2) .box p {
+    font-size: 14px;              /* Sets text size */
+    line-height: 1.5;             /* Adds space between lines */
+}
+/* Style the headings */
+h1, h2, h3 {
+    font-family: Garamond, serif; /* Changes heading font */
+    font-weight: bold;             /* Makes headings bold */
+}
+
+/* Main page title */
+section article:first-child h1 {
+    font-size: 38px;              /* Makes the title bigger */
+}
+
+/* Section titles */
+section article h2 {
+    font-size: 28px;              /* Sets heading size */
+}
+
+/* Step titles */
+section article:nth-child(2) .box h3 {
+    font-size: 18px;              /* Sets step title size */
+}
+/* Style the service information */
+.service-info {
+    margin-top: 30px;             /* Adds space above */
+}
+
+/* Place service information side by side */
+.service-info div {
+    display: inline-block;        /* Places items side by side */
+    width: 25%;                   /* Sets item width */
+    padding: 15px;                /* Adds space inside */
+    vertical-align: top;          /* Aligns items at the top */
+}
+
+/* Style service titles */
+.service-info h3 {
+    font-size: 18px;              /* Sets title size */
+}
+
+/* Style service descriptions */
+.service-info p {
+    font-size: 14px;              /* Sets text size */
+}
+/* Style Why Choose PawPal boxes */
+.why-pawpal .box {
+    width: 200px;                /* Sets box width */
+    height: 150px;               /* Sets box height */
+    padding: 15px;               /* Adds space inside */
+    margin: 10px;                /* Adds space outside */
+    background-color: #faf7fc;   /* Sets light background */
+    border: none;                /* Removes border */
+    border-radius: 10px;         /* Rounds the corners */
+    display: inline-block;       /* Places boxes side by side */
+    vertical-align: top;         /* Aligns boxes at the top */
+    box-sizing: border-box;      /* Includes padding in the height */
+}
+
+/* Style Why PawPal titles */
+.why-pawpal .box h3 {
+    font-size: 18px;              /* Sets title size */
+}
+
+/* Style Why PawPal text */
+.why-pawpal .box p {
+    font-size: 14px;              /* Sets text size */
+    line-height: 1.5;             /* Adds space between lines */
+}
+
+/* Style external resources */
+.resources {
+    margin-top: 10px;             /* Adds a small space above */
+    padding: 30px;                /* Adds space inside */
+    text-align: center;            /* Centers the content */
+}
+
+/* Style resource links */
+.resources a {
+    display: inline-block;         /* Places links on their own line */
+    background-color: #d9a6d9;     /* Sets link colour */
+    color: black;                  /* Sets text colour */
+    padding: 8px 15px;             /* Adds space inside */
+    border-radius: 5px;            /* Rounds the corners */
+    text-decoration: none;         /* Removes underline */
+    font-weight: bold;             /* Makes text bold */
+    margin: 5px;                   /* Adds space around links */
+}
+
+/* Change links when mouse is over */
+.resources a:hover {
+    background-color: #c78bc7;     /* Changes link colour */
+}
