@@ -1,12 +1,10 @@
 /* Style the whole webpage */
-/* Style the whole webpage */
 body {
     font-family: Arial, sans-serif; /* Sets the font */
     margin: 0;                     /* Removes default margin */
     background-color: white;       /* Sets white background */
 }
 
-/* Style the header */
 /* Style the header */
 header {
     background-color: white; /* Sets header background */
@@ -19,18 +17,19 @@ header img {
     height: auto;             /* Keeps image proportions */
     display: block;           /* Removes extra space */
 }
+
 /* Style the navigation */
 nav {
-    background-color: #333;
-    padding: 15px;
-    text-align: center;
+    background-color: #333;      /* Dark grey menu bar */
+    padding: 15px;               /* Adds space inside the bar */
+    text-align: center;          /* Puts the links in the centre */
 }
 
 /* Style the navigation links */
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
+    color: white;                /* White text on the dark bar */
+    text-decoration: none;       /* Removes the underline */
+    margin: 15px;                /* Adds space between the links */
 }
 
 /* Change links when mouse is over */
@@ -40,17 +39,18 @@ nav a:hover {
 
 /* Style the main section */
 section {
-    padding: 20px;
+    padding: 20px;               /* Adds space around the page content */
 }
 
 /* Style the article */
 article {
-    background-color: white;
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 900px;
-    text-align: center; /* Centers the content */
+    background-color: white;     /* White background */
+    padding: 20px;               /* Adds space inside */
+    margin: 10px auto;           /* auto centres the article on the page */
+    max-width: 900px;            /* The article is never wider than 900px */
+    text-align: center;          /* Centers the content */
 }
+
 /* Style the home image */
 article img {
     width: 60%;           /* Sets image width */
@@ -61,8 +61,6 @@ article img {
     border-radius: 10px;  /* Rounds image corners */
 }
 
-/* Service boxes */
-/* Service boxes */
 /* Service boxes */
 .box {
     width: 240px;                /* Sets box width */
@@ -84,9 +82,10 @@ article img {
     object-fit: cover;           /* Keeps image proportions */
     border-radius: 5px;           /* Rounds image corners */
 }
+
 /* Style the headings */
 h2 {
-    text-align: center;
+    text-align: center;          /* Centres all the h2 titles */
 }
 
 /* Style the service buttons */
@@ -100,9 +99,11 @@ h2 {
     font-weight: bold;             /* Makes text bold */
 }
 
+/* Change the service button when mouse is over it */
 .box button:hover {
     background-color: #a54ba5; /* Changes colour on hover */
 }
+
 /* Style the contact form */
 form {
     width: 500px;                 /* Sets form width */
@@ -153,96 +154,103 @@ form input[type="reset"]:hover {
 
 /* Style the footer */
 footer {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-    color: white;
+    background-color: #333;      /* Dark grey, same as the menu bar */
+    padding: 10px;               /* Adds space inside */
+    text-align: center;          /* Centres the text */
+    color: white;                /* White text */
 }
+
 /* Style the home page */
 section article {
-    padding: 30px;
-    margin: 30px auto;
-    max-width: 1000px;
+    padding: 30px;               /* Adds space inside */
+    margin: 30px auto;           /* Space above and below, centred */
+    max-width: 1000px;           /* Wider than the first article rule, so this one is used */
 }
 
 /* Style the main title */
 section article h1 {
-    font-size: 36px;
+    font-size: 36px;             /* Size of the h1 title */
 }
 
-/* Style the home image */
+/* Style the home image. ">" means only images directly inside the article, not inside the boxes */
 section article > img {
-    width: 70%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 20px auto;
+    width: 70%;                  /* Image width is 70% of the article */
+    height: 300px;               /* Image height */
+    object-fit: cover;           /* Fills the space without stretching the image */
+    border-radius: 10px;         /* Rounds the corners */
+    margin: 20px auto;           /* Centres the image */
 }
 
-/* Style the services link */
+/* Style the links inside the articles (they look like buttons) */
 section article a {
-    display: inline-block;
-    background-color: #d9a6d9;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+    display: inline-block;       /* Lets the link have padding like a button */
+    background-color: #d9a6d9;   /* Light purple colour */
+    color: black;                /* Black text */
+    padding: 10px 20px;          /* Adds space inside */
+    border-radius: 5px;          /* Rounds the corners */
+    text-decoration: none;       /* Removes the underline */
+    font-weight: bold;           /* Makes the text bold */
 }
-/* Style the welcome section */
-section article:first-child {
-    padding: 40px;
-    background-color: #faf7fc;
+
+/* .intro = the first article of each page. On the home page it is the welcome part */
+section article.intro {
+    padding: 40px;               /* More space inside */
+    background-color: #faf7fc;   /* Very light purple background */
 }
 
 /* Style the welcome title */
-section article:first-child h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+section article.intro h1 {
+    font-size: 36px;             /* Title size */
+    margin-bottom: 10px;         /* Space below the title */
 }
 
 /* Style the welcome subtitle */
-section article:first-child h3 {
-    font-size: 22px;
+section article.intro h3 {
+    font-size: 22px;             /* Subtitle size */
 }
 
 /* Style the welcome text */
-section article:first-child p {
-    font-size: 16px;
-    max-width: 700px;
-    margin: 15px auto;
+section article.intro p {
+    font-size: 16px;             /* Text size */
+    max-width: 700px;            /* Keeps the lines short and easy to read */
+    margin: 15px auto;           /* Centres the text block */
 }
-/* Style the How PawPal Works section */
-section article:nth-child(2) {
-    padding: 40px;
+
+/* .steps = the "How PawPal Works" article (home) and the "Why Choose PawPal?" article (about) */
+section article.steps {
+    padding: 40px;               /* Adds space inside */
 }
 
 /* Style the section title */
-section article:nth-child(2) h2 {
-    font-size: 28px;
-    margin-bottom: 25px;
+section article.steps h2 {
+    font-size: 28px;             /* Title size */
+    margin-bottom: 25px;         /* Space below the title */
 }
 
 /* Add space between the service boxes */
-section article:nth-child(2) .box {
-    margin: 10px;
-}
-/* Style the about section */
-section article:nth-child(3) {
-    background-color: #faf7fc;
-    padding: 40px;
+section article.steps .box {
+    margin: 10px;                /* Space around each box */
 }
 
-section article:nth-child(3) h2 {
-    font-size: 28px;
+/* .about-text = the "Pet Care Made Simple" article on the home page */
+section article.about-text {
+    background-color: #faf7fc;   /* Very light purple background */
+    padding: 40px;               /* Adds space inside */
 }
 
-section article:nth-child(3) p {
-    font-size: 16px;
-    line-height: 1.6;
+/* Style the title of the third article */
+section article.about-text h2 {
+    font-size: 28px;             /* Title size */
 }
+
+/* Style the text of the third article */
+section article.about-text p {
+    font-size: 16px;             /* Text size */
+    line-height: 1.6;            /* Space between the lines */
+}
+
 /* Style the How PawPal Works boxes */
-section article:nth-child(2) .box {
+section article.steps .box {
     border: none;                 /* Removes the border */
     background-color: #faf7fc;   /* Adds a light background */
     padding: 20px;                /* Adds space inside */
@@ -250,7 +258,7 @@ section article:nth-child(2) .box {
 }
 
 /* Make the images round */
-section article:nth-child(2) .box img {
+section article.steps .box img {
     width: 160px;                 /* Sets image width */
     height: 160px;                /* Sets image height */
     border-radius: 50%;           /* Makes image circular */
@@ -258,24 +266,25 @@ section article:nth-child(2) .box img {
 }
 
 /* Style the step titles */
-section article:nth-child(2) .box h3 {
+section article.steps .box h3 {
     font-size: 18px;              /* Sets title size */
     margin-top: 15px;             /* Adds space above */
 }
 
 /* Style the step text */
-section article:nth-child(2) .box p {
+section article.steps .box p {
     font-size: 14px;              /* Sets text size */
     line-height: 1.5;             /* Adds space between lines */
 }
-/* Style the headings */
+
+/* Style the heading fonts */
 h1, h2, h3 {
     font-family: Garamond, serif; /* Changes heading font */
     font-weight: bold;             /* Makes headings bold */
 }
 
-/* Main page title */
-section article:first-child h1 {
+/* Main page title (this rule comes later, so 38px is used instead of 36px) */
+section article.intro h1 {
     font-size: 38px;              /* Makes the title bigger */
 }
 
@@ -285,9 +294,10 @@ section article h2 {
 }
 
 /* Step titles */
-section article:nth-child(2) .box h3 {
+section article.steps .box h3 {
     font-size: 18px;              /* Sets step title size */
 }
+
 /* Style the service information */
 .service-info {
     margin-top: 30px;             /* Adds space above */
@@ -310,11 +320,12 @@ section article:nth-child(2) .box h3 {
 .service-info p {
     font-size: 14px;              /* Sets text size */
 }
+
 /* Style Why Choose PawPal boxes */
 .why-pawpal .box {
-    width: 200px;                /* Sets box width */
+    width: 200px;                /* Sets box width (the .steps .box rule above is more specific, so 240px is used) */
     height: 150px;               /* Sets box height */
-    padding: 15px;               /* Adds space inside */
+    padding: 15px;               /* Adds space inside (also overridden by the .steps .box rule) */
     margin: 10px;                /* Adds space outside */
     background-color: #faf7fc;   /* Sets light background */
     border: none;                /* Removes border */
@@ -357,4 +368,254 @@ section article:nth-child(2) .box h3 {
 /* Change links when mouse is over */
 .resources a:hover {
     background-color: #c78bc7;     /* Changes link colour */
+}
+/* Products section */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Product cards */
+.product-box {
+    width: 220px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product images */
+.product-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Product buttons */
+.product-box button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-box button:hover {
+    background-color: #9575bd;
+}
+/* =========================================
+   SERVICES - NEW DESIGN
+   ========================================= */
+
+section article.intro .box {
+    border: none;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+section article.intro .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(120, 90, 150, 0.18);
+}
+
+/* Service images */
+section article.intro .box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Service buttons */
+section article.intro .box button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+section article.intro .box button:hover {
+    background-color: #9575bd;
+}
+
+/* Registration page */
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+
+#registerForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c5e8;
+    border-radius: 8px;
+     box-sizing: border-box;
+}
+#registerForm {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+#registerForm button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#registerForm button:hover {
+    background-color: #9575bd;
+}
+/* Login page */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+#loginForm label {
+    font-weight: bold;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c5e8;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#loginForm button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#loginForm button:hover {
+    background-color: #9575bd;
+}
+/* Login page background */
+body.login-page {
+    background-color: #faf7fc;
+    min-height: 100vh;
+}
+
+/* Center the login content */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Login card */
+.login-card {
+    background-color: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.15);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Login header */
+.login-header {
+    margin-bottom: 25px;
+}
+
+.login-header h1 {
+    color: #9575bd;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: #666;
+    margin: 0;
+}
+
+/* Login title */
+.login-card h2 {
+    margin-bottom: 25px;
+}
+
+/* Login form */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Login labels */
+#loginForm label {
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Login inputs */
+#loginForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c5e8;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Login button */
+#loginForm button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Button hover */
+#loginForm button:hover {
+    background-color: #9575bd;
+}
+
+/* Register link */
+.register-link {
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #9575bd;
+    font-weight: bold;
 }

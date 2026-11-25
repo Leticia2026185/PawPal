@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PawPal</title>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Website header with the PawPal image -->
+    <header>
+        <img src="images/pawpal-header.jpg" alt="PawPal pets">
+    </header>
+
+    <!-- Navigation menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <!-- Main content of the login page -->
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <!-- Login heading -->
+            <header class="login-header">
+                <h1>PawPal</h1>
+                <p>Welcome back!</p>
+            </header>
+
+            <h2>Login</h2>
+
+            <!-- Login form -->
+            <form id="loginForm" action="/login" method="POST">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <!-- Link to the registration page -->
+            <p class="register-link">
+                Don't have an account?
+                <a href="register.html">Register</a>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
