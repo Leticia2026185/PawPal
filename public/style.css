@@ -90,18 +90,18 @@ h2 {
 
 /* Style the service buttons */
 .box button {
-    background-color: #ddacdd;    /* Changes button colour */
-    color: rgb(22, 10, 10);                 /* Changes text colour */
+    background-color: #b9a1d8;    /* Lilac, the same colour as all buttons */
+    color: white;                 /* White text */
     padding: 10px 20px;           /* Adds space inside */
     border: none;                 /* Removes border */
-    border-radius: 6px;            /* Rounds button corners */
+    border-radius: 8px;           /* Rounds button corners */
     cursor: pointer;               /* Shows a pointer on hover */
     font-weight: bold;             /* Makes text bold */
 }
 
 /* Change the service button when mouse is over it */
 .box button:hover {
-    background-color: #a54ba5; /* Changes colour on hover */
+    background-color: #9575bd; /* Darker purple on hover */
 }
 
 /* Style the contact form */
@@ -137,11 +137,11 @@ form textarea {
 /* Style form buttons */
 form input[type="submit"],
 form input[type="reset"] {
-    background-color: #d9a6d9;    /* Sets button colour */
-    color: black;                 /* Sets text colour */
+    background-color: #b9a1d8;    /* Lilac, the same colour as all buttons */
+    color: white;                 /* White text */
     padding: 10px 20px;           /* Adds space inside */
     border: none;                 /* Removes border */
-    border-radius: 5px;           /* Rounds corners */
+    border-radius: 8px;           /* Rounds corners */
     font-weight: bold;             /* Makes text bold */
     cursor: pointer;              /* Shows pointer on hover */
 }
@@ -149,7 +149,7 @@ form input[type="reset"] {
 /* Change buttons when mouse is over them */
 form input[type="submit"]:hover,
 form input[type="reset"]:hover {
-    background-color: #c78bc7;    /* Changes button colour */
+    background-color: #9575bd;    /* Darker purple on hover */
 }
 
 /* Style the footer */
@@ -184,12 +184,17 @@ section article > img {
 /* Style the links inside the articles (they look like buttons) */
 section article a {
     display: inline-block;       /* Lets the link have padding like a button */
-    background-color: #d9a6d9;   /* Light purple colour */
-    color: black;                /* Black text */
+    background-color: #b9a1d8;   /* Lilac, the same colour as all buttons */
+    color: white;                /* White text */
     padding: 10px 20px;          /* Adds space inside */
-    border-radius: 5px;          /* Rounds the corners */
+    border-radius: 8px;          /* Rounds the corners */
     text-decoration: none;       /* Removes the underline */
     font-weight: bold;           /* Makes the text bold */
+}
+
+/* Change the links when the mouse is over them */
+section article a:hover {
+    background-color: #9575bd;   /* Darker purple on hover */
 }
 
 /* .intro = the first article of each page. On the home page it is the welcome part */
@@ -356,10 +361,10 @@ section article.steps .box h3 {
 /* Style resource links */
 .resources a {
     display: inline-block;         /* Places links on their own line */
-    background-color: #d9a6d9;     /* Sets link colour */
-    color: black;                  /* Sets text colour */
+    background-color: #b9a1d8;     /* Lilac, the same colour as all buttons */
+    color: white;                  /* White text */
     padding: 8px 15px;             /* Adds space inside */
-    border-radius: 5px;            /* Rounds the corners */
+    border-radius: 8px;            /* Rounds the corners */
     text-decoration: none;         /* Removes underline */
     font-weight: bold;             /* Makes text bold */
     margin: 5px;                   /* Adds space around links */
@@ -367,358 +372,367 @@ section article.steps .box h3 {
 
 /* Change links when mouse is over */
 .resources a:hover {
-    background-color: #c78bc7;     /* Changes link colour */
+    background-color: #9575bd;     /* Darker purple on hover */
 }
 /* Products section */
 .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: flex;                 /* Uses flexbox to place the items */
+    flex-wrap: wrap;               /* Items go to a new line when there is no space */
+    justify-content: center;       /* Centres the items horizontally */
+    gap: 20px;                     /* Adds space between the items */
 }
 
 /* Product cards */
 .product-box {
-    width: 220px;
-    padding: 15px;
-    border-radius: 12px;
-    background-color: #ffffff;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;                  /* Sets the width */
+    padding: 15px;                 /* Adds space inside */
+    border-radius: 12px;           /* Rounds the corners */
+    background-color: #ffffff;     /* Sets the background colour */
+    text-align: center;            /* Centres the text */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
 }
 
 /* Product images */
 .product-box img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px;
+    width: 100%;                   /* Fills the full width */
+    height: 180px;                 /* Sets the height */
+    object-fit: contain;           /* Shows the whole image without cutting it */
+    display: block;                /* Places the element on its own line */
+    margin: 0 auto 10px;           /* Centres the element */
 }
 
 /* Product buttons */
 .product-box button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 10px 15px;            /* Adds space inside */
+    border-radius: 8px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
 }
 
+/* Change the product button when the mouse is over it */
 .product-box button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 /* =========================================
    SERVICES - NEW DESIGN
    ========================================= */
 
+/* Service cards */
 section article.intro .box {
-    border: none;
-    border-radius: 18px;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;                  /* Removes the border */
+    border-radius: 18px;           /* Rounds the corners */
+    background-color: white;       /* Sets the background colour */
+    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.12); /* Adds a soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Makes the change smooth */
 }
 
 /* Hover effect */
 section article.intro .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(120, 90, 150, 0.18);
+    transform: translateY(-5px);   /* Moves the card up a little */
+    box-shadow: 0 8px 20px rgba(120, 90, 150, 0.18); /* Adds a soft shadow */
 }
 
 /* Service images */
 section article.intro .box img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
+    width: 100%;                   /* Fills the full width */
+    height: 180px;                 /* Sets the height */
+    object-fit: cover;             /* Fills the space without stretching the image */
+    border-radius: 12px;           /* Rounds the corners */
 }
 
 /* Service buttons */
 section article.intro .box button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 11px 22px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    border-radius: 8px;            /* Rounds the corners */
+    padding: 11px 22px;            /* Adds space inside */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    transition: background-color 0.3s ease; /* Makes the change smooth */
 }
 
 /* Button hover */
 section article.intro .box button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 
 /* Registration page */
 #registerForm {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 400px;
+    display: flex;                 /* Uses flexbox to place the items */
+    flex-direction: column;        /* Puts the items one under the other */
+    gap: 12px;                     /* Adds space between the items */
+    max-width: 400px;              /* Never wider than this */
 }
 
+/* Register inputs */
 #registerForm input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d8c5e8;
-    border-radius: 8px;
-     box-sizing: border-box;
+    width: 100%;                   /* Fills the full width */
+    padding: 12px;                 /* Adds space inside */
+    border: 1px solid #d8c5e8;     /* Adds a light border */
+    border-radius: 8px;            /* Rounds the corners */
+     box-sizing: border-box;       /* Includes padding in the size */
 }
 #registerForm {
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
+    width: 100%;                   /* Fills the full width */
+    max-width: 400px;              /* Never wider than this */
+    box-sizing: border-box;        /* Includes padding in the size */
 }
 
+/* Register button */
 #registerForm button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 12px;                 /* Adds space inside */
+    border-radius: 8px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    font-weight: bold;             /* Makes the text bold */
 }
 
+/* Change the register button when the mouse is over it */
 #registerForm button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 /* Login page */
 #loginForm {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 400px;
-    margin: 30px auto;
+    display: flex;                 /* Uses flexbox to place the items */
+    flex-direction: column;        /* Puts the items one under the other */
+    gap: 12px;                     /* Adds space between the items */
+    max-width: 400px;              /* Never wider than this */
+    margin: 30px auto;             /* Centres the element */
 }
 
 #loginForm label {
-    font-weight: bold;
+    font-weight: bold;             /* Makes the text bold */
 }
 
 #loginForm input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d8c5e8;
-    border-radius: 8px;
-    box-sizing: border-box;
+    width: 100%;                   /* Fills the full width */
+    padding: 12px;                 /* Adds space inside */
+    border: 1px solid #d8c5e8;     /* Adds a light border */
+    border-radius: 8px;            /* Rounds the corners */
+    box-sizing: border-box;        /* Includes padding in the size */
 }
 
 #loginForm button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 12px;                 /* Adds space inside */
+    border-radius: 8px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    font-weight: bold;             /* Makes the text bold */
 }
 
 #loginForm button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 /* Login page background */
 body.login-page {
-    background-color: #faf7fc;
-    min-height: 100vh;
+    background-color: #faf7fc;     /* Sets the background colour */
+    min-height: 100vh;             /* At least the full screen height */
 }
 
 /* Center the login content */
 .login-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+    min-height: 100vh;             /* At least the full screen height */
+    display: flex;                 /* Uses flexbox to place the items */
+    justify-content: center;       /* Centres the items horizontally */
+    align-items: center;           /* Centres the items vertically */
+    padding: 20px;                 /* Adds space inside */
+    box-sizing: border-box;        /* Includes padding in the size */
 }
 
 /* Login card */
 .login-card {
-    background-color: white;
-    width: 100%;
-    max-width: 420px;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.15);
-    box-sizing: border-box;
-    text-align: center;
+    background-color: white;       /* Sets the background colour */
+    width: 100%;                   /* Fills the full width */
+    max-width: 420px;              /* Never wider than this */
+    padding: 40px;                 /* Adds space inside */
+    border-radius: 15px;           /* Rounds the corners */
+    box-shadow: 0 4px 15px rgba(120, 90, 150, 0.15); /* Adds a soft shadow */
+    box-sizing: border-box;        /* Includes padding in the size */
+    text-align: center;            /* Centres the text */
 }
 
 /* Login header */
 .login-header {
-    margin-bottom: 25px;
+    margin-bottom: 25px;           /* Adds space below */
 }
 
+/* Login title (PawPal) */
 .login-header h1 {
-    color: #9575bd;
-    font-size: 38px;
-    margin-bottom: 10px;
+    color: #9575bd;                /* Sets the text colour */
+    font-size: 38px;               /* Sets the text size */
+    margin-bottom: 10px;           /* Adds space below */
 }
 
+/* Login subtitle */
 .login-header p {
-    color: #666;
-    margin: 0;
+    color: #666;                   /* Sets the text colour */
+    margin: 0;                     /* Removes the margin */
 }
 
 /* Login title */
 .login-card h2 {
-    margin-bottom: 25px;
+    margin-bottom: 25px;           /* Adds space below */
 }
 
 /* Login form */
 #loginForm {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    display: flex;                 /* Uses flexbox to place the items */
+    flex-direction: column;        /* Puts the items one under the other */
+    gap: 12px;                     /* Adds space between the items */
+    width: 100%;                   /* Fills the full width */
+    max-width: 100%;               /* Never wider than this */
+    margin: 0;                     /* Removes the margin */
 }
 
 /* Login labels */
 #loginForm label {
-    text-align: left;
-    font-weight: bold;
+    text-align: left;              /* Aligns the text to the left */
+    font-weight: bold;             /* Makes the text bold */
 }
 
 /* Login inputs */
 #loginForm input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d8c5e8;
-    border-radius: 8px;
-    box-sizing: border-box;
+    width: 100%;                   /* Fills the full width */
+    padding: 12px;                 /* Adds space inside */
+    border: 1px solid #d8c5e8;     /* Adds a light border */
+    border-radius: 8px;            /* Rounds the corners */
+    box-sizing: border-box;        /* Includes padding in the size */
 }
 
 /* Login button */
 #loginForm button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 12px;                 /* Adds space inside */
+    border-radius: 8px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    font-weight: bold;             /* Makes the text bold */
+    margin-top: 10px;              /* Adds space above */
 }
 
 /* Button hover */
 #loginForm button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 
 /* Register link */
 .register-link {
-    margin-top: 20px;
+    margin-top: 20px;              /* Adds space above */
 }
 
+/* Link to the other page */
 .register-link a {
-    color: #9575bd;
-    font-weight: bold;
+    color: #9575bd;                /* Sets the text colour */
+    font-weight: bold;             /* Makes the text bold */
 }
 /* Basket items */
 .basket-item button {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 10px;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 5px 10px;             /* Adds space inside */
+    border-radius: 6px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    margin-left: 10px;             /* Adds space on the left */
 }
 
 /* Basket and checkout buttons */
 #checkoutButton,
 #placeOrderButton {
-    background-color: #b9a1d8;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    background-color: #b9a1d8;     /* Sets the background colour */
+    color: white;                  /* Sets the text colour */
+    border: none;                  /* Removes the border */
+    padding: 12px 24px;            /* Adds space inside */
+    border-radius: 8px;            /* Rounds the corners */
+    cursor: pointer;               /* Shows a hand when the mouse is over it */
+    font-weight: bold;             /* Makes the text bold */
 }
 
 #checkoutButton:hover,
 #placeOrderButton:hover,
 .basket-item button:hover {
-    background-color: #9575bd;
+    background-color: #9575bd;     /* Changes the colour when the mouse is over it */
 }
 
 /* Checkout page */
 .checkout-total {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 20px;               /* Sets the text size */
+    font-weight: bold;             /* Makes the text bold */
 }
 
+/* Green confirmation message after the order */
 .order-message {
-    color: green;
-    font-weight: bold;
+    color: green;                  /* Sets the text colour */
+    font-weight: bold;             /* Makes the text bold */
 }
 
 /* Message from the server on login and register */
 #formMessage {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #4a3b55;
+    margin-top: 15px;              /* Adds space above */
+    font-weight: bold;             /* Makes the text bold */
+    color: #4a3b55;                /* Sets the text colour */
 }
 
 /* Responsive design: these rules only work on small screens (phones) */
 @media (max-width: 700px) {
     nav a {
-        display: inline-block;
-        margin: 8px;
+        display: inline-block;     /* Places the elements side by side */
+        margin: 8px;               /* Adds space outside */
     }
 
     section article,
     section article.intro,
     section article.steps,
     section article.about-text {
-        padding: 20px;
+        padding: 20px;             /* Adds space inside */
     }
 
     section article > img,
     article img {
-        width: 100%;
-        height: auto;
+        width: 100%;               /* Fills the full width */
+        height: auto;              /* Sets the height */
         max-height: 300px;
     }
 
     .box,
     section article.steps .box,
     .why-pawpal .box {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
+        width: 100%;               /* Fills the full width */
+        max-width: 320px;          /* Never wider than this */
+        height: auto;              /* Sets the height */
     }
 
     .service-info div {
-        width: 100%;
+        width: 100%;               /* Fills the full width */
     }
 
     form {
-        width: 100%;
+        width: 100%;               /* Fills the full width */
     }
 
     form input[type="text"],
     form input[type="email"] {
-        width: 100%;
+        width: 100%;               /* Fills the full width */
     }
 
     video {
-        width: 100%;
+        width: 100%;               /* Fills the full width */
     }
 
     .login-card {
-        padding: 28px 22px;
+        padding: 28px 22px;        /* Adds space inside */
     }
 }
 
 /* Same left margin for all the inputs on login and register */
 #registerForm input,
 #loginForm input {
-    margin: 0;
+    margin: 0;                     /* Removes the margin */
 }
