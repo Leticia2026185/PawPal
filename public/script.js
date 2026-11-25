@@ -1,3 +1,4 @@
+
 /* =========================================
    PAWPAL - JAVASCRIPT
    ========================================= */
@@ -48,10 +49,11 @@ function validateForm() {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
+    // Patterns (regular expressions) to check the format of the fields
     // Check if the name contains only letters
     const namePattern = /^[A-Za-z\s]+$/;
 
-    // Check phone number
+    // Check phone number (9 or 10 numbers)
     const phonePattern = /^[0-9]{9,10}$/;
 
     // Check email format
@@ -79,6 +81,7 @@ function validateForm() {
 
     alert("Thank you! Your message has been sent.");
 
+    // return false stops the form from reloading the page
     return false;
 }
 
@@ -94,10 +97,12 @@ const basketTotal = document.getElementById("basketTotal");
 
 // Load the basket from localStorage (or start with an empty basket)
 // localStorage keeps the basket when the user goes to another page
+// JSON.parse changes the saved text back into an array
 let basket = JSON.parse(localStorage.getItem("basket")) || [];
 
 // Save the basket in localStorage
 function saveBasket() {
+    // localStorage only keeps text, so JSON.stringify changes the array into text
     localStorage.setItem("basket", JSON.stringify(basket));
 }
 
@@ -119,14 +124,17 @@ function calculateTotal() {
 
 if (productsContainer) {
 
+    // Ask the server for the products (GET /products)
     fetch("/products")
 
         .then(function (response) {
             return response.json();
         })
 
+        // products is the array that came from the database
         .then(function (products) {
 
+            // Remove the "Loading products..." text
             productsContainer.innerHTML = "";
 
             products.forEach(function (product) {
@@ -136,6 +144,7 @@ if (productsContainer) {
 
                 productBox.className = "product-box";
 
+                // ${...} puts the product data inside the HTML
                 productBox.innerHTML = `
                     <img src="images/${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
@@ -151,6 +160,7 @@ if (productsContainer) {
                 // Add product to basket
                 addButton.addEventListener("click", function () {
 
+                    // find looks for the same product id in the basket
                     const existingProduct = basket.find(function (item) {
                         return item.id === product.id;
                     });
@@ -247,6 +257,7 @@ function renderBasket() {
 
             // If the quantity is zero, remove the product
             if (item.quantity === 0) {
+                // splice removes 1 item from the array at this position
                 basket.splice(index, 1);
             }
 
@@ -283,7 +294,7 @@ if (checkoutButton) {
             return;
         }
 
-        // Go to the checkout page
+        // Go to the checkout page (the basket is already saved in localStorage)
         window.location.href = "checkout.html";
 
     });

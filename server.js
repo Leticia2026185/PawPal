@@ -1,8 +1,16 @@
+/* =========================================
+   PAWPAL - SERVER (Node.js + Express)
+   Handles registration, login and products.
+   Start it with: node server.js
+   ========================================= */
 
-// Import Express and MySQL
+// Read the database settings from the .env file
 require("dotenv").config();
+// Express creates the web server
 const express = require("express");
+// mysql2 connects Node.js to the MySQL database
 const mysql = require("mysql2");
+// bcrypt creates and checks the password hash
 const bcrypt = require("bcrypt");
 
 // Create Express application
@@ -15,6 +23,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to MySQL using environment variables
+// process.env reads the values from the .env file (the password is not in the code)
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -33,8 +42,10 @@ db.connect(function(error) {
 });
 
 // REGISTER ROUTE
+// Runs when script.js sends POST /register with the form data
 app.post("/register", function(req, res) {
 
+    // req.body has the data sent by the browser
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     let email = req.body.email;
@@ -54,6 +65,7 @@ app.post("/register", function(req, res) {
     email = email.trim().toLowerCase();
 
     // Check if email already exists
+    // The ? is a placeholder: mysql2 puts the email there safely (protects against SQL injection)
     const checkEmail = "SELECT * FROM users WHERE email = ?";
 
     db.query(checkEmail, [email], function(error, results) {
@@ -63,12 +75,13 @@ app.post("/register", function(req, res) {
             return res.status(500).json({ message: "Database error" });
         }
 
-        // If email already exists
+        // If email already exists (status 409 = conflict)
         if (results.length > 0) {
             return res.status(409).json({ message: "Email already registered" });
         }
 
         // Hash the password for security
+        // 10 is the number of salt rounds (how many times bcrypt mixes the password)
         bcrypt.hash(password, 10, function(error, hashedPassword) {
 
             if (error) {
@@ -85,6 +98,7 @@ app.post("/register", function(req, res) {
                     return res.status(500).json({ message: "Error creating account" });
                 }
 
+                // Status 200 (OK) is sent by default
                 res.json({ message: "Account created successfully! Please login." });
 
             });
@@ -95,6 +109,7 @@ app.post("/register", function(req, res) {
 });
 
 // LOGIN ROUTE
+// Runs when script.js sends POST /login with email and password
 app.post("/login", function(req, res) {
 
     let email = req.body.email;
@@ -105,6 +120,7 @@ app.post("/login", function(req, res) {
         return res.status(400).json({ message: "Please enter email and password" });
     }
 
+    // Remove spaces and use small letters, the same as in the register route
     email = email.trim().toLowerCase();
 
     // Search for user by email
@@ -117,14 +133,16 @@ app.post("/login", function(req, res) {
             return res.status(500).json({ message: "Database error" });
         }
 
-        // Check if user exists
+        // Check if user exists (status 401 = not authorised)
         if (results.length === 0) {
             return res.status(401).json({ message: "Invalid email or password" });
         }
 
+        // results is an array, the user is the first (and only) row
         const user = results[0];
 
         // Compare password with stored hash
+        // bcrypt hashes the typed password again and compares the two hashes
         bcrypt.compare(password, user.password, function(error, result) {
 
             if (error) {
@@ -144,6 +162,7 @@ app.post("/login", function(req, res) {
 });
 
 // PRODUCTS ROUTE
+// Runs when script.js calls fetch("/products")
 app.get("/products", function(req, res) {
 
     console.log("GET /products received");
@@ -160,11 +179,12 @@ app.get("/products", function(req, res) {
             });
         }
 
+        // Send the products to the browser in JSON format
         res.json(results);
     });
 });
 
-// Start server
+// Start server on port 3000 (open http://localhost:3000)
 app.listen(3000, function() {
     console.log("Server running at http://localhost:3000");
 });
