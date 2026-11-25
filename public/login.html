@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="login-page">
 
     <!-- Website header with the PawPal image -->
     <header>
@@ -40,7 +40,8 @@
             <h2>Login</h2>
 
             <!-- Login form -->
-            <form id="loginForm" action="/login" method="POST">
+            <!-- script.js sends this form to the server with fetch() -->
+            <form id="loginForm">
 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -52,6 +53,9 @@
 
             </form>
 
+            <!-- script.js writes the server message here -->
+            <p id="formMessage"></p>
+
             <!-- Link to the registration page -->
             <p class="register-link">
                 Don't have an account?
@@ -61,6 +65,9 @@
         </section>
 
     </main>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>
