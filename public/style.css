@@ -619,3 +619,106 @@ body.login-page {
     color: #9575bd;
     font-weight: bold;
 }
+/* Basket items */
+.basket-item button {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Basket and checkout buttons */
+#checkoutButton,
+#placeOrderButton {
+    background-color: #b9a1d8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#checkoutButton:hover,
+#placeOrderButton:hover,
+.basket-item button:hover {
+    background-color: #9575bd;
+}
+
+/* Checkout page */
+.checkout-total {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.order-message {
+    color: green;
+    font-weight: bold;
+}
+
+/* Message from the server on login and register */
+#formMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4a3b55;
+}
+
+/* Responsive design: these rules only work on small screens (phones) */
+@media (max-width: 700px) {
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    section article,
+    section article.intro,
+    section article.steps,
+    section article.about-text {
+        padding: 20px;
+    }
+
+    section article > img,
+    article img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .box,
+    section article.steps .box,
+    .why-pawpal .box {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .service-info div {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    form input[type="text"],
+    form input[type="email"] {
+        width: 100%;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+    }
+}
+
+/* Same left margin for all the inputs on login and register */
+#registerForm input,
+#loginForm input {
+    margin: 0;
+}
