@@ -1,6 +1,6 @@
 
- // Import Express and MySQL
- require("dotenv").config();
+// Import Express and MySQL
+require("dotenv").config();
 const express = require("express");
 const mysql = require("mysql2");
 const bcrypt = require("bcrypt");
@@ -9,9 +9,10 @@ const bcrypt = require("bcrypt");
 const app = express();
 
 // Middleware
+// express.json() reads the JSON sent by fetch() in script.js
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
+// The website files (HTML, CSS, JS, images) are inside the public folder
+app.use(express.static("public"));
 
 // Connect to MySQL using environment variables
 const db = mysql.createConnection({
@@ -36,13 +37,21 @@ app.post("/register", function(req, res) {
 
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
-    const email = req.body.email;
+    let email = req.body.email;
     const password = req.body.password;
 
     // Check if all fields are filled
     if (!firstName || !lastName || !email || !password) {
-        return res.status(400).send("Please fill in all fields");
+        return res.status(400).json({ message: "Please fill in all fields" });
     }
+
+    // Check the password length
+    if (password.length < 8) {
+        return res.status(400).json({ message: "Password must have at least 8 characters" });
+    }
+
+    // Save the email always in the same format
+    email = email.trim().toLowerCase();
 
     // Check if email already exists
     const checkEmail = "SELECT * FROM users WHERE email = ?";
@@ -51,32 +60,32 @@ app.post("/register", function(req, res) {
 
         if (error) {
             console.log("Email check error:", error.message);
-            return res.status(500).send("Database error");
+            return res.status(500).json({ message: "Database error" });
         }
 
         // If email already exists
         if (results.length > 0) {
-            return res.status(400).send("Email already registered");
+            return res.status(409).json({ message: "Email already registered" });
         }
 
         // Hash the password for security
         bcrypt.hash(password, 10, function(error, hashedPassword) {
 
             if (error) {
-                return res.status(500).send("Error encrypting password");
+                return res.status(500).json({ message: "Error encrypting password" });
             }
 
             // Insert user into database
             const sql = "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
 
-            db.query(sql, [firstName, lastName, email, hashedPassword], function(error, result) {
+            db.query(sql, [firstName.trim(), lastName.trim(), email, hashedPassword], function(error, result) {
 
                 if (error) {
                     console.log("Registration error:", error.message);
-                    return res.status(500).send("Error creating account");
+                    return res.status(500).json({ message: "Error creating account" });
                 }
 
-                res.send("Account created successfully!");
+                res.json({ message: "Account created successfully! Please login." });
 
             });
         });
@@ -84,19 +93,19 @@ app.post("/register", function(req, res) {
     });
 
 });
-// LOGIN ROUTE
-console.log("LOGIN ROUTE LOADED");
-app.post("/login", function(req, res) {
-    console.log("LOGIN REQUEST RECEIVED");
-    console.log(req.body);
 
-    const email = req.body.email;
+// LOGIN ROUTE
+app.post("/login", function(req, res) {
+
+    let email = req.body.email;
     const password = req.body.password;
 
     // Check if fields are filled
     if (!email || !password) {
-        return res.status(400).send("Please enter email and password");
+        return res.status(400).json({ message: "Please enter email and password" });
     }
+
+    email = email.trim().toLowerCase();
 
     // Search for user by email
     const sql = "SELECT * FROM users WHERE email = ?";
@@ -105,12 +114,12 @@ app.post("/login", function(req, res) {
 
         if (error) {
             console.log("Login error:", error.message);
-            return res.status(500).send("Database error");
+            return res.status(500).json({ message: "Database error" });
         }
 
         // Check if user exists
         if (results.length === 0) {
-            return res.status(401).send("Invalid email or password");
+            return res.status(401).json({ message: "Invalid email or password" });
         }
 
         const user = results[0];
@@ -119,20 +128,21 @@ app.post("/login", function(req, res) {
         bcrypt.compare(password, user.password, function(error, result) {
 
             if (error) {
-                return res.status(500).send("Error checking password");
+                return res.status(500).json({ message: "Error checking password" });
             }
 
             if (!result) {
-                return res.status(401).send("Invalid email or password");
+                return res.status(401).json({ message: "Invalid email or password" });
             }
 
-            res.redirect("/");
+            res.json({ message: "Login successful! Welcome " + user.first_name });
 
         });
 
     });
 
 });
+
 // PRODUCTS ROUTE
 app.get("/products", function(req, res) {
 
